@@ -1,0 +1,13 @@
+version: '2.0'
+services:
+  w2v2xlsr53:
+    build:
+      context: .
+      dockerfile: build/Dockerfile.engine
+    image: n2nw2v2xlsr53
+    # container_name: swt_webapp_messaging-engine
+    volumes:
+      - "E:/LANTA-w2v2/wav2vec2-xlsr53-cv13-129hrs/checkpoint-37800:/wav2vec2/model129hrs"
+      - "E:/LANTA-w2v2/wav2vec2-xlsr53-TH-cmv13-processor:/wav2vec2/processor"
+    ports:
+      - 5352:8000
