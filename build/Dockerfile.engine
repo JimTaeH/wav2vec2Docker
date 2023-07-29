@@ -17,37 +17,3 @@ EXPOSE 8000
 COPY app /app
 
 CMD ["uvicorn", "app.main:app", "--port", "8000", "--host", "0.0.0.0"]
-
-# FROM python:3.7
-
-# WORKDIR /
-# COPY requirements.txt /requirements.txt
-# COPY torch-1.10.1+cu113-cp37-cp37m-linux_x86_64.whl /torch-1.10.1+cu113-cp37-cp37m-linux_x86_64.whl
-# RUN pip install torch-1.10.1+cu113-cp37-cp37m-linux_x86_64.whl
-# RUN pip install -r requirements.txt
-# RUN apt-get -y update && apt-get -y upgrade && apt-get install -y ffmpeg
-# EXPOSE 8000
-# COPY app /app
-
-# CMD ["uvicorn", "app.main:app", "--port", "8000", "--host", "0.0.0.0"]
-
-# FROM ubuntu:20.04
-
-# RUN apt-get update && apt-get -y upgrade
-# RUN apt-get -y install python3.7
-# RUN apt-get -y install python3-pip
-# RUN python3 -m pip install --upgrade pip
-# # RUN pip debug --verbose
-
-# WORKDIR /
-# COPY requirements.txt /requirements.txt
-# COPY torch-2.0.1+cu118-cp38-cp38-linux_x86_64.whl /torch-2.0.1+cu118-cp38-cp38-linux_x86_64.whl
-# RUN pip install torch-2.0.1+cu118-cp38-cp38-linux_x86_64.whl
-# RUN pip install -r requirements.txt
-# ENV TZ=Asia
-# RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
-# RUN apt-get install -y ffmpeg
-# EXPOSE 8000
-# COPY app /app
-
-# CMD ["uvicorn", "app.main:app", "--port", "8000", "--host", "0.0.0.0"]
