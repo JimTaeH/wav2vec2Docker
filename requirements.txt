@@ -1,0 +1,8 @@
+transformers==4.28.1
+--find-links https://download.pytorch.org/whl/cu118/torch_stable.html
+torchaudio==2.0.2
+ffmpeg-python
+uvicorn
+fastapi
+requests
+python-multipart
