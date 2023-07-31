@@ -28,3 +28,26 @@ services:
     ports:
       - 5352:8000
 ```
+4. Build docker image with
+```console
+docker-compose build
+```
+Wait until docker build the image successfully.
+
+## To Run Docker
+We have 2 option to run docker images.
+### CPU Version
+1. You can easily type
+```console
+docker-compose up -d
+```
+2. After completely up you can check container status with (if success you would see container with Up xxx time status)
+```console
+docker ps
+```
+3. Go to localhost:5352/docs you will see swagger interface (FastAPI).
+4. You can try uploading an audio file and wait for its inference and response text transcribe.
+5. To close the container
+```console
+docker-compose down
+```
