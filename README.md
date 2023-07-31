@@ -41,11 +41,10 @@ We have 2 option to run docker images.
 ```console
 docker-compose up -d
 ```
-2. After completely up you can check container status with
+2. After completely up you can check container status with <br /> (if success you would see container with Up xxx time status)
 ```console
 docker ps
 ```
-(if success you would see container with Up xxx time status)
 3. Go to localhost:5352/docs you will see swagger interface (FastAPI).
 4. You can try uploading an audio file and wait for its inference and response text transcribe.
 5. To close the container
