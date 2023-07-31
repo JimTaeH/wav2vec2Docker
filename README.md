@@ -51,3 +51,12 @@ docker ps
 ```console
 docker-compose down
 ```
+### GPU Version
+1. Using docker run instead of docker-compose
+```console
+docker run --rm -v "PATH_TO_YOUR_MODEL:/wav2vec2/model129hrs" -v "PATH_TO_YOUR_PROCESSOR:/wav2vec2/processor" --gpus all -p 5352:8000 --name w2v2xlsr53api  n2nw2v2xlsr53
+```
+2. If it is not error. You will see console logging. Wait until it completely up.
+3. Go to localhost:5352/docs you will see swagger interface (FastAPI).
+4. You can try uploading an audio file and wait for its inference and response text transcribe. (Should be more (very) faster than CPU)
+5. To close the container. Please back to console and press CTRL + C to cancel operation and it should be automatic delete container.
