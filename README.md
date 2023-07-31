@@ -12,7 +12,7 @@ We must install all of the following on the host machine to create API with dock
 ## Get Started
 1. Clone this repository.
 2. Move torch-2.0.1+cu118-cp38-cp38-linux_x86_64.whl into the root of cloned repository.
-3. In docker-compose.yml change the path to your model and processor. The format of the model and processor must be loaded by Hugging Face's Transformer library. For more detailed sees [Fine-Tune Wav2Vec2](https://huggingface.co/blog/fine-tune-wav2vec2-english)
+3. In [docker-compose.yml](docker-compose.yml) change the path to your model and processor. The format of the model and processor must be loaded by Hugging Face's Transformer library. For more detailed sees [Fine-Tune Wav2Vec2](https://huggingface.co/blog/fine-tune-wav2vec2-english)
 ```console
 version: '2.0'
 services:
