@@ -7,4 +7,23 @@ We must install all of the following on the host machine to create API with dock
 * [Docker Compose](https://docs.docker.com/compose/install/) follow the instruction.
 * [Nvidia Drivers](https://www.nvidia.com/download/index.aspx) Select your GPU and OS specification in the drop-down menu. Then download and install it following by instructions. But in case Windows OS + WSL2 with Ubuntu installed. You must install the Nvidia driver on your Windows system only. Don't install it in WSL2 because WSL2 basically sees the Nvidia driver in Windows.
 * [NVIDIA Container Toolkit](https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/latest/install-guide.html#docker) Follow this documentation (But you can skip that setting up docker because we already installed that.)
-* [Download PyTorch (.whl) into root of project directory (Optional)](https://download.pytorch.org/whl/torch/) Because sometimes it has network error when install torch which is big file size. To fix it I recommend download .whl file and install from local. (Version: torch-2.0.1+cu118-cp38-cp38-linux_x86_64.whl)
+* [Download PyTorch (.whl) (Optional)](https://download.pytorch.org/whl/torch/) Because sometimes it has a network error when installing Torch which is a big file size. To fix it I recommend downloading the .whl file and installing from locally. (Version: torch-2.0.1+cu118-cp38-cp38-linux_x86_64.whl)
+
+## Get Started
+1. Clone this repository.
+2. Move torch-2.0.1+cu118-cp38-cp38-linux_x86_64.whl into the root of cloned repository.
+3. ```console
+version: '2.0'
+services:
+  w2v2xlsr53:
+    build:
+      context: .
+      dockerfile: build/Dockerfile.engine
+    image: n2nw2v2xlsr53
+    # container_name: swt_webapp_messaging-engine
+    volumes:
+      - "PATH_TO_YOUR_MODEL_CHECKPOINT:/wav2vec2/model129hrs"
+      - "PATH_TO_YOUR_PROCESSOR:/wav2vec2/processor"
+    ports:
+      - 5352:8000
+```
