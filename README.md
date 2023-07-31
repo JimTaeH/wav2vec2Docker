@@ -37,7 +37,7 @@ Wait until docker build the image successfully.
 ## To Run Docker
 We have 2 option to run docker images.
 ### CPU Version
-1. You can easily type
+1. You can easily deploy it by typing.
 ```console
 docker-compose up -d
 ```
